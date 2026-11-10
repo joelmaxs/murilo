@@ -4,260 +4,39 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Murilo Zennaro — Graphic Designer</title>
+<meta property="og:title" content="Murilo Zennaro — Graphic Designer">
+<meta property="og:image" content="img/hero/01-rede.jpg">
+<meta name="theme-color" content="#050505">
 <meta name="description" content="Murilo Zennaro, graphic designer em São Paulo. Pôsteres, key visuals, social media e sports graphics.">
-<script src="./vendor/react.js"></script>
-<script src="./vendor/react-dom.js"></script>
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&amp;family=Geist+Mono:wght@400;500&amp;family=Barlow+Condensed:ital,wght@1,700;1,800&amp;display=swap" rel="stylesheet">
-<style>
-body{margin:0;background:#050505}
-html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:#1745FF #050505}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-.md{--bg:#050505;--bg2:#101013;--fg:#F2F2EF;--mut:#86867F;--ln:rgba(242,242,239,.16);--blue:#1745FF;--pad:clamp(14px,1.6vw,24px);--g:clamp(10px,1.4vw,20px);--ease:cubic-bezier(.2,.7,.2,1);--eo:cubic-bezier(.16,1,.3,1);--eio:cubic-bezier(.76,0,.24,1);position:relative;background:var(--bg);color:var(--fg);font-family:'Geist',system-ui,sans-serif;font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased;overflow-x:clip;padding:var(--g)}
-.md *{box-sizing:border-box}
-.md a{color:inherit;text-decoration:none}
-.md img{display:block;max-width:100%}
-.md ::selection{background:var(--blue);color:#fff}
-.md :focus-visible{outline:1px solid var(--blue);outline-offset:-3px}
-:where(.md) :where(h1,h2,h3,p,ul,dl,dd,dt,figure){margin:0}
-:where(.md) :where(ul){list-style:none;padding:0}
-.md .mono{font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase}
-.md .mu{color:var(--mut)}
-.md .bl{color:var(--blue)}
-
-/* idioma: PT / EN */
-html.en .md [data-l="pt"],html:not(.en) .md [data-l="en"]{display:none!important}
-.md .lg{display:flex;gap:6px;align-items:center;font-size:11px}
-.md .lg button{all:unset;cursor:pointer;color:var(--mut);transition:color .3s}
-.md .lg button:hover{color:var(--blue)}
-html:not(.en) .md .lg [data-set="pt"],html.en .md .lg [data-set="en"]{color:var(--fg)}
-
-/* blocos: grade com linhas */
-.md .gx{display:grid;border-top:1px solid var(--ln);border-left:1px solid var(--ln)}
-.md .gx>*{border-right:1px solid var(--ln);border-bottom:1px solid var(--ln);padding:var(--pad);min-width:0}
-.md .c4{grid-template-columns:repeat(4,minmax(0,1fr))}
-.md .lk{transition:color .35s var(--eo)}
-.md nav .lk,.md .ft .lk{padding:0 .22em;margin:0 -.22em;background:linear-gradient(var(--blue),var(--blue)) no-repeat 100% 0/0 100%;transition:color .3s var(--eo),background-size .5s var(--eo)}
-.md nav .lk:hover,.md .ft .lk:hover,.md nav .lk:focus-visible{color:#fff;background-position:0 0;background-size:100% 100%}
-.md .lk:hover{color:var(--blue)}
-.md .ar{display:inline-block;transition:transform .4s var(--ease)}
-.md a:hover .ar{transform:translateX(4px)}
-
-/* hero */
-.md .top{font-size:13px}
-.md .top.tn,.md .top nav a,.md .top .lg,.md .top>.mu{animation:ent 1s var(--eo) both}
-.md .top.tn{animation-delay:.15s}
-.md .top nav a:nth-child(1){animation-delay:.25s}.md .top nav a:nth-child(2){animation-delay:.32s}.md .top nav a:nth-child(3){animation-delay:.39s}
-.md .top .lg{animation-delay:.46s}.md .top>.mu{animation-delay:.53s}
-@keyframes ent{from{opacity:0;transform:translateY(12px);filter:blur(8px)}}
-.md .top.tn{grid-column:1/4}
-.md .top nav{display:flex;flex-direction:column;align-items:flex-end;text-align:right}
-.md .top.r{display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:14px}
-.md .st{display:inline-flex;align-items:center;gap:8px}
-.md .st i{width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 0 rgba(23,69,255,.6);animation:pulse 2.4s infinite}
-@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(23,69,255,0)}100%{box-shadow:0 0 0 0 rgba(23,69,255,0)}}
-#topo{min-height:calc(var(--vh,100svh) - var(--g) * 2);grid-template-rows:auto 1fr}
-/* palco do hero: fotos 50% | PORT/FOLIO 50% */
-#topo{grid-template-rows:auto 1fr auto}
-.md .hs{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding:0!important;min-height:340px}
-.md .hs-im{position:relative;overflow:hidden;border-right:1px solid var(--ln);background:#000}
-.md .hs-im{animation:imr 1.9s var(--eo) .25s both}
-@keyframes imr{from{clip-path:inset(0 100% 0 0);filter:blur(8px)}to{clip-path:inset(0 0 0 0)}}
-.md .hs-im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);opacity:0;transform:scale(1.06);transition:opacity 3s cubic-bezier(.45,0,.25,1),transform 14s linear}
-.md .hs-im img.on{opacity:1;transform:scale(1)}
-.md .hs-tx{position:relative;display:flex;align-items:center;justify-content:space-between;gap:var(--pad);padding:var(--pad) calc(var(--pad) * 1.6) var(--pad) calc(var(--pad) * 2.4)}
-.md .hx{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:800;text-transform:uppercase;font-size:min(13.4vw,calc((var(--vh,100svh) - 280px) / 1.9));line-height:.97;letter-spacing:-.01em;color:var(--fg)}
-.md .hx>span{display:block;animation:hxr 1.5s var(--eo) .55s both}
-.md .hx>span+span{animation-delay:.72s}
-@keyframes hxr{from{opacity:0;clip-path:inset(0 -10% 100% -10%);transform:translateY(.32em);filter:blur(14px)}to{opacity:1;clip-path:inset(-20% -10% -20% -10%)}}
-.md .mz{align-self:center;margin-top:.6em;font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:800;font-size:clamp(28px,3.4vw,58px);line-height:1;color:var(--blue);animation:ent 1.2s var(--eo) 1.15s both}
-.md .hf{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:20px;padding-block:calc(var(--pad) * 1.3)!important;font-size:12px;letter-spacing:.38em}
-.md .hf>span:first-child{animation:spc 1.8s var(--eo) 1s both}
-@keyframes spc{from{opacity:0;letter-spacing:.9em;filter:blur(8px)}}
-.md .hf .cn{animation:ent 1s var(--eo) 1.25s both}
-.md .hf .cn{display:flex;align-items:center;gap:clamp(14px,2.4vw,40px);letter-spacing:.3em}
-.md .hf .cn i{display:block;width:clamp(50px,11vw,160px);height:1px;background:var(--ln);position:relative;overflow:hidden}
-.md .hf .cn i::after{content:'';position:absolute;inset:0;background:var(--fg);transform-origin:left;animation:prog 10s linear both}
-@keyframes prog{from{transform:scaleX(0)}}
-
-/* cabeçalho de seção em bloco */
-.md .sec{margin-top:var(--g)}
-.md .sh{grid-template-columns:minmax(0,1fr) minmax(0,3fr)}
-.md .sh .num{display:flex;flex-direction:column;justify-content:space-between;gap:30px}
-.md .sh .num b{font-weight:300;font-size:clamp(56px,6.4vw,104px);line-height:.8;letter-spacing:-.05em}
-.md .sh h2{display:flex;align-items:flex-end;justify-content:flex-end;font-weight:400;font-size:clamp(56px,10.4vw,170px);line-height:.8;letter-spacing:-.055em;text-transform:uppercase}
-
-/* trabalhos: cada projeto é um bloco */
-.md .gr{grid-template-columns:repeat(4,minmax(0,1fr));border-top:0}
-.md .it{display:flex;flex-direction:column;gap:12px}
-.md .it .cp{display:flex;justify-content:space-between;gap:10px}
-.md .it h3{font-weight:400;font-size:14px;letter-spacing:-.01em}
-.md .it .im{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--bg2)}
-.md .it img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05) brightness(.92);transition:filter .9s var(--eo),transform 1.4s var(--eo),opacity .7s var(--eo)}
-.md .it .go{position:absolute;right:10px;bottom:10px;width:40px;height:40px;display:grid;place-items:center;background:var(--blue);color:#fff;overflow:hidden;transform:scale(0);transition:transform .6s var(--eo)}
-.md .it .go svg{width:22px;height:22px;transform:translate(-130%,130%);transition:transform .7s var(--eo) .08s}
-.md .it:hover .go svg{transform:none}
-.md .it h3{transition:color .4s var(--eo),transform .6s var(--eo)}
-@media (hover:hover){
-.md .gr:hover .it:not(:hover) img{opacity:.38}
-.md .it:hover .go{transform:none}
-.md .it:hover h3{transform:translateX(6px)}
-}
-.md .it{position:relative}
-.md .it::before{content:'';position:absolute;left:-1px;right:-1px;top:-1px;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:right;transition:transform .7s var(--eo);z-index:1}
-.md .it:hover::before{transform-origin:left}
-.md .it:hover::before{transform:scaleX(1)}
-.md .it:hover h3{color:var(--blue)}
-.md .it:hover img{filter:none;transform:scale(1.04)}
-
-/* detalhe do projeto (abre ao tocar) */
-.md .it{cursor:pointer}
-.md .pv{position:fixed;inset:0;z-index:60;background:var(--bg);overflow-y:auto;overscroll-behavior:contain;padding:var(--g);visibility:hidden;clip-path:inset(100% 0 0 0)}
-.md .pv.on{visibility:visible;clip-path:inset(0 0 0 0);transition:clip-path 1.05s var(--eo)}
-.md .pv.on.out{clip-path:inset(0 0 100% 0);transition:clip-path .8s var(--eio)}
-.md .pv.out .pv-bd,.md .pv.out .pv-nav{opacity:0;filter:blur(8px);transform:translateY(-20px);transition:opacity .45s var(--eio),filter .45s var(--eio),transform .6s var(--eio)}
-.md .pv-bd.go .in>*,.md .pv-bd.go~.pv-nav>*,.md .pv.on .pv-top>*{animation:ent 1s var(--eo) both}
-.md .pv-bd.go .in>*:nth-child(1){animation-delay:.3s}.md .pv-bd.go .in>*:nth-child(2){animation-delay:.38s}.md .pv-bd.go .in>*:nth-child(3){animation-delay:.46s}.md .pv-bd.go .in>*:nth-child(4){animation-delay:.54s}.md .pv-bd.go .in>*:nth-child(5){animation-delay:.62s}
-.md .pv.on .pv-top>*{animation-delay:.35s}
-.md .pv-bd.go~.pv-nav>*{animation-delay:.7s}
-.md .pv-bd.go .pv-g figure{animation:pvf 1.3s var(--eo) both}
-.md .pv-bd.go .pv-g figure:nth-child(1){animation-delay:.35s}.md .pv-bd.go .pv-g figure:nth-child(2){animation-delay:.5s}.md .pv-bd.go .pv-g figure:nth-child(n+3){animation-delay:.62s}
-@keyframes pvf{from{clip-path:inset(100% 0 0 0);transform:translateY(40px)}to{clip-path:inset(0 0 0 0)}}
-.md .pv button{all:unset;cursor:pointer;transition:color .3s}
-.md .pv button:hover{color:var(--blue)}
-.md .pv .gx>button{padding:var(--pad);border-right:1px solid var(--ln);border-bottom:1px solid var(--ln)}
-.md .pv-top{grid-template-columns:1fr auto;align-items:center;position:sticky;top:calc(var(--g) * -1);z-index:2;background:var(--bg)}
-.md .pv-ct{text-align:right}
-.md .pv-x svg{width:14px;height:14px}
-.md .pv-bd{grid-template-columns:minmax(0,1fr) minmax(0,2fr);border-top:0}
-.md .pv-info{display:flex;flex-direction:column;gap:28px}
-.md .pv-info .in{position:sticky;top:90px;display:flex;flex-direction:column;gap:28px}
-.md .pv-t{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:800;text-transform:uppercase;font-size:clamp(44px,5.4vw,92px);line-height:.88;letter-spacing:-.005em}
-.md .pv-t+.mono{margin-top:-12px}
-.md .pv-d{font-size:16px;line-height:1.5;color:var(--mut);max-width:42ch}
-.md .pv-dl{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-top:var(--pad);border-top:1px solid var(--ln)}
-.md .pv-dl dd{margin-top:4px;font-family:'Geist',sans-serif;text-transform:none;letter-spacing:0;font-size:14px}
-.md .pv-bh{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border:1px solid var(--ln);transition:background .5s var(--eo),border-color .5s var(--eo),color .5s var(--eo)}
-.md .pv-bh span:last-child{transition:transform .6s var(--eo)}
-.md .pv-bh:hover span:last-child{transform:translate(3px,-3px)}
-.md .pv-bh:hover{background:var(--blue);border-color:var(--blue);color:#fff}
-.md .pv-g{display:grid;grid-template-columns:1fr 1fr;gap:var(--pad)}
-.md .pv-g figure{position:relative;background:var(--bg2);overflow:hidden}
-.md .pv-g figure:first-child{grid-column:1/-1}
-.md .pv-g img{width:100%;height:auto;opacity:0;transform:scale(1.08);transition:opacity 1s var(--eo),transform 1.8s var(--eo)}
-.md .pv.on .pv-g img.ld{opacity:1;transform:none}
-.md .pv-ph{aspect-ratio:4/5;display:grid;place-items:center;text-align:center;border:1px dashed var(--ln);color:var(--mut);background:transparent!important}
-.md .pv-nav{grid-template-columns:1fr 1fr;border-top:0}
-.md .pv-nav button{display:flex;flex-direction:column;gap:10px}
-.md .pv-nav button:last-child{align-items:flex-end;text-align:right}
-.md .pv-nav b{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:800;text-transform:uppercase;font-size:clamp(28px,3.4vw,56px);line-height:.9}
-
-/* sobre */
-.md .ab{grid-template-columns:minmax(0,1fr) minmax(0,2fr) minmax(0,1fr);border-top:0}
-.md .ab-t{font-weight:400;font-size:clamp(24px,2.6vw,42px);line-height:1.1;letter-spacing:-.04em}
-.md .ab-t em{font-style:normal;color:var(--blue)}
-.md .ab .tx{display:flex;flex-direction:column;justify-content:space-between;gap:40px}
-.md .ab dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding-top:var(--pad);border-top:1px solid var(--ln)}
-.md .ab dd{margin-top:4px;font-size:14px;text-transform:none;letter-spacing:0;font-family:'Geist',sans-serif}
-.md .ab .ph{padding:0!important;position:relative;overflow:hidden;min-height:320px;background:var(--bg2)}
-.md .ab .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1)}
-.md .ab .ph span{position:absolute;left:var(--pad);bottom:var(--pad);color:#fff}
-
-/* contato (bloco azul) */
-.md .ct{border-top:0}
-.md .ct .so{display:flex;flex-direction:column}
-.md .ct .so a{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--ln);transition:color .4s var(--eo),padding .6s var(--eo)}
-.md .ct .so a span{transition:transform .6s var(--eo)}
-.md .ct .so a:hover span{transform:translate(3px,-3px)}
-.md .ct .so a:hover{color:var(--blue);padding-left:8px}
-.md .mail{display:block;font-weight:400;font-size:calc((100vw - var(--g) * 2 - var(--pad) * 2) / 11.2);line-height:.95;letter-spacing:-.055em;white-space:nowrap;transition:color .5s var(--eo),letter-spacing .9s var(--eo);padding-block:clamp(60px,9vw,140px) var(--pad)!important}
-.md .mail:hover{color:var(--blue);letter-spacing:-.045em}
-.md .ft{grid-template-columns:1fr 1fr;border-top:0}
-.md .ft>*:last-child{text-align:right}
-.md .ft a{color:var(--fg)}
-.md .ft a:hover{color:var(--blue)}
-
-/* entrada das seções: sobe + desfoque ao aparecer */
-.md [data-rv]:not(.in){opacity:0}
-.md [data-rv].in{animation:rvi 1.2s var(--eo) var(--d,0s) both}
-.md [data-rv="t"].in{animation-name:rvt;animation-duration:1.5s}
-.md [data-rv="h"].in{animation-name:rvh;animation-duration:1.4s}
-@keyframes rvi{from{opacity:0;transform:translateY(34px);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
-@keyframes rvt{from{opacity:0;transform:translateY(10px);filter:blur(16px)}to{opacity:1;transform:none;filter:none}}
-@keyframes rvh{from{opacity:0;clip-path:inset(0 0 100% 0);transform:translateY(.3em);filter:blur(12px)}to{opacity:1;clip-path:inset(-10% -5% -20% -5%);transform:none;filter:none}}
-/* troca de idioma: o texto novo entra desfocando */
-html.en .md [data-l="en"],html:not(.en) .md [data-l="pt"]{animation:lgf .6s var(--eo)}
-@keyframes lgf{from{opacity:0;filter:blur(6px)}}
-
-/* responsivo */
-@media (max-width:1024px){
-.md .gr{grid-template-columns:repeat(3,minmax(0,1fr))}
-.md .ab{grid-template-columns:minmax(0,1fr) minmax(0,2fr)}
-.md .ab .ph{grid-column:1/-1;min-height:420px}
-}
-@media (max-width:700px){
-.md .c4{grid-template-columns:1fr 1fr}
-.md .top.tn{grid-column:1}
-.md .hs{grid-template-columns:1fr}
-.md .hs-im{aspect-ratio:16/11;border-right:0;border-bottom:1px solid var(--ln)}
-.md .hs-tx{align-items:flex-end;padding:calc(var(--pad) * 1.6) var(--pad) var(--pad) calc(var(--pad) * 1.4)}
-.md .hx{font-size:30vw}
-.md .mz{font-size:9vw;margin-top:1.2em}
-.md .hf{letter-spacing:.2em;font-size:10px}
-.md .hf .cn{letter-spacing:.15em}
-.md .sh{grid-template-columns:1fr 1fr}
-.md .sh h2{font-size:12.6vw;grid-column:1/-1;justify-content:flex-start}
-.md .sh .num b{font-size:16vw}
-.md .sh .num{grid-column:1/-1;flex-direction:row;justify-content:space-between;align-items:flex-end}
-.md .gr{grid-template-columns:repeat(2,minmax(0,1fr))}
-.md .it{gap:10px;padding:10px!important}
-.md .it .cp{flex-direction:column;gap:2px}
-.md .it h3{font-size:13px}
-.md .ab{grid-template-columns:1fr}
-.md .ab dl{grid-template-columns:1fr 1fr}
-.md .ab .ph{min-height:300px}
-.md .ft{grid-template-columns:1fr}
-.md .ft>*:last-child{text-align:left}
-.md .pv-bd{grid-template-columns:1fr}
-.md .pv-info .in{position:static}
-.md .pv-g{grid-template-columns:1fr}
-}
-@media (prefers-reduced-motion:reduce){.md *{animation:none!important;transition-duration:.01ms!important}}
-</style>
-</helmet>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 <div class="md">
 
 <section id="topo" class="gx c4">
 <a class="top tn" href="#topo">Murilo Zennaro</a>
 
 
-<div class="top r"><nav aria-label="Seções"><a class="lk" href="#trabalhos"><span data-l="pt">Trabalhos</span><span data-l="en">Work</span></a><a class="lk" href="#sobre"><span data-l="pt">Sobre</span><span data-l="en">About</span></a><a class="lk" href="#contato"><span data-l="pt">Contato</span><span data-l="en">Contact</span></a></nav><div class="lg mono" role="group" aria-label="Idioma"><button type="button" data-set="pt">PT</button><span class="mu">/</span><button type="button" data-set="en">EN</button></div><span class="mu">©{{year}}</span></div>
-<div class="hs"><div class="hs-im"><img class="on" src="./assets/23f43acd4b9f81e55dc7cc05ea37d371.jpg" alt="Rede de gol em preto e branco"><img src="./assets/f99dcf3cf1f77f663195729b9c20f562.jpg" alt="Trave de gol em preto e branco"><img src="./assets/d80140b5cb9265c202db08876c2d00c8.jpg" alt="Bola de futebol molhada na grama"><img src="./assets/e49e9fcd65050f496d7cf780d9268b38.jpg" alt="Marcação de escanteio no gramado"></div>
+<div class="top r"><nav aria-label="Seções"><a class="lk" href="#trabalhos"><span data-l="pt">Trabalhos</span><span data-l="en">Work</span></a><a class="lk" href="#sobre"><span data-l="pt">Sobre</span><span data-l="en">About</span></a><a class="lk" href="#contato"><span data-l="pt">Contato</span><span data-l="en">Contact</span></a></nav><div class="lg mono" role="group" aria-label="Idioma"><button type="button" data-set="pt">PT</button><span class="mu">/</span><button type="button" data-set="en">EN</button></div><span class="mu">©<span class="mz-year"></span></span></div>
+<div class="hs"><div class="hs-im"><img class="on" src="img/hero/01-rede.jpg" alt="Rede de gol em preto e branco"><img src="img/hero/02-trave.jpg" alt="Trave de gol em preto e branco"><img src="img/hero/03-bola.jpg" alt="Bola de futebol molhada na grama"><img src="img/hero/04-escanteio.jpg" alt="Marcação de escanteio no gramado"></div>
 <div class="hs-tx"><h1 class="hx" aria-label="Portfolio — Murilo Zennaro" style="line-height: 0.8"><span>Port</span><span>Folio</span></h1><b class="mz" aria-hidden="true">MZ</b></div></div>
 <div class="hf mono"><span><span data-l="pt">Design esportivo</span><span data-l="en">Sports design</span></span><span class="cn"><span class="hs-n">01</span><i></i><span>04</span></span></div>
 </section>
 
 <section class="sec" id="trabalhos">
-<div class="gx sh"><div class="num"><span class="mono mu" data-rv="t"><span data-l="pt">Projetos recentes</span><span data-l="en">Recent projects</span></span><b class="bl" data-rv="" style="--d:.1s">01</b></div><h2 data-rv="h"><span data-l="pt">Trabalhos</span><span data-l="en">Work</span></h2></div>
-<div class="gx gr">
-<sc-for list="{{pj}}" as="p" hint-placeholder-count="12">
-<a class="it" data-rv="" href="#trabalhos" data-i="{{p.i}}" role="button" aria-haspopup="dialog"><div class="cp"><h3>{{p.t}}</h3><span class="mono bl">{{p.n}}</span></div><div class="im"><img src="{{p.src}}" alt="{{p.t}}" loading="lazy"><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4H20V18H16V10.8L6.4 20.4 3.6 17.6 13.2 8H6Z" fill="currentColor"></path></svg></span></div><span class="mono mu"><span data-l="pt">{{p.c}}</span><span data-l="en">{{p.ce}}</span></span></a>
-</sc-for>
-</div>
+<div class="gx sh"><div class="num"><span class="mono mu" data-rv="t"><span data-l="pt">Projetos recentes</span><span data-l="en">Recent projects</span></span><b class="bl" data-rv style="--d:.1s">01</b></div><h2 data-rv="h"><span data-l="pt">Trabalhos</span><span data-l="en">Work</span></h2></div>
+<div class="gx gr" id="mz-grid" aria-live="polite"></div>
 </section>
 
 <section class="sec" id="sobre">
-<div class="gx sh"><div class="num"><span class="mono mu" data-rv="t">Graphic designer</span><b class="bl" data-rv="" style="--d:.1s">02</b></div><h2 data-rv="h"><span data-l="pt">Sobre</span><span data-l="en">About</span></h2></div>
+<div class="gx sh"><div class="num"><span class="mono mu" data-rv="t">Graphic designer</span><b class="bl" data-rv style="--d:.1s">02</b></div><h2 data-rv="h"><span data-l="pt">Sobre</span><span data-l="en">About</span></h2></div>
 <div class="gx ab">
 <p class="mono mu" data-rv="t"><span data-l="pt">Quem é</span><span data-l="en">Who</span></p>
 <div class="tx" data-rv="t" style="--d:.15s"><p class="ab-t" data-l="pt">Texto sobre o Murilo: como começou no design, o estilo dele e o tipo de projeto que faz — pôsteres, social media e <em>sports graphics</em>.</p><p class="ab-t" data-l="en">Text about Murilo: how he started in design, his style and the kind of work he does — posters, social media and <em>sports graphics</em>.</p>
 <dl class="mono"><div><dt class="mu"><span data-l="pt">Base</span><span data-l="en">Based in</span></dt><dd>São Paulo, BR</dd></div><div><dt class="mu"><span data-l="pt">Foco</span><span data-l="en">Focus</span></dt><dd>Sports graphics</dd></div><div><dt class="mu">Status</dt><dd>Freelance &amp; full-time</dd></div></dl></div>
-<figure class="ph" data-rv="" style="--d:.25s"><img src="./assets/07f189428a6b6c87b47ad3f106e691f3.jpg" alt="Foto de Murilo Zennaro" loading="lazy"><span class="mono">Murilo Zennaro</span></figure>
+<figure class="ph" data-rv style="--d:.25s"><img src="img/sobre.jpg" alt="Foto de Murilo Zennaro" loading="lazy"><span class="mono">Murilo Zennaro</span></figure>
 </div>
 </section>
 
@@ -265,137 +44,21 @@ html.en .md [data-l="en"],html:not(.en) .md [data-l="pt"]{animation:lgf .6s var(
 <div class="gx c4 ct">
 <p class="mono" data-rv="t"><span data-l="pt">Contato</span><span data-l="en">Contact</span></p>
 <p class="mono mu" data-rv="t" style="--d:.1s"><span data-l="pt">Orçamentos, parcerias<br>e projetos</span><span data-l="en">Quotes, partnerships<br>and projects</span></p>
-<b class="bl" data-rv="" style="--d:.2s;font-weight:300;font-size:clamp(56px,6.4vw,104px);line-height:.8;letter-spacing:-.05em">03</b>
-<div class="so mono" data-rv="" style="--d:.3s"><a href="https://www.behance.net/murilozennaro" target="_blank" rel="noopener noreferrer">Behance <span>↗</span></a><a href="https://www.instagram.com/murilozennaro/" target="_blank" rel="noopener noreferrer">Instagram <span>↗</span></a><a href="https://x.com/mz_desiign" target="_blank" rel="noopener noreferrer">X <span>↗</span></a><a href="https://www.linkedin.com/in/murilo-zennaro-034169300/" target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a></div>
+<b class="bl" data-rv style="--d:.2s;font-weight:300;font-size:clamp(56px,6.4vw,104px);line-height:.8;letter-spacing:-.05em">03</b>
+<div class="so mono" data-rv style="--d:.3s"><a href="https://www.behance.net/murilozennaro" target="_blank" rel="noopener noreferrer">Behance <span>↗</span></a><a href="https://www.instagram.com/murilozennaro/" target="_blank" rel="noopener noreferrer">Instagram <span>↗</span></a><a href="https://x.com/mz_desiign" target="_blank" rel="noopener noreferrer">X <span>↗</span></a><a href="https://www.linkedin.com/in/murilo-zennaro-034169300/" target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a></div>
 <a class="mail" data-rv="t" style="--d:.2s;grid-column:1/-1" href="mailto:works@murilozennaro.com">works@murilozennaro.com</a>
 </div>
-<footer class="gx ft mono mu" data-rv="t"><span>© {{year}} Murilo Zennaro</span><span><span data-l="pt">Desenvolvido por</span><span data-l="en">Developed by</span> <a class="lk" href="https://wa.me/558399173803" target="_blank" rel="noopener noreferrer">Joelma</a></span></footer>
+<footer class="gx ft mono mu" data-rv="t"><span>© <span class="mz-year"></span> Murilo Zennaro</span><span><span data-l="pt">Desenvolvido por</span><span data-l="en">Developed by</span> <a class="lk" href="https://wa.me/558399173803" target="_blank" rel="noopener noreferrer">Joelma</a></span></footer>
 </section>
 
 <div class="pv" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="pv-t">
-<div class="gx pv-top mono"><button type="button" data-pv="close">← <span data-l="pt">Voltar</span><span data-l="en">Back</span></button><span class="pv-ct"><span class="pv-n">01</span> / <span class="pv-tot mu">12</span></span></div>
-<div class="gx pv-bd">
-<div class="pv-info"><div class="in">
-<span class="mono bl pv-c"></span>
-<h2 class="pv-t" id="pv-t"></h2>
-<p class="pv-d"><span data-l="pt">Descrição do projeto: contexto, ideia, processo e resultado.</span><span data-l="en">Project description: context, idea, process and outcome.</span></p>
-<dl class="pv-dl mono"><div><dt class="mu"><span data-l="pt">Cliente</span><span data-l="en">Client</span></dt><dd>—</dd></div><div><dt class="mu"><span data-l="pt">Ano</span><span data-l="en">Year</span></dt><dd>—</dd></div><div><dt class="mu"><span data-l="pt">Tipo</span><span data-l="en">Type</span></dt><dd class="pv-c2"></dd></div><div><dt class="mu"><span data-l="pt">Ferramentas</span><span data-l="en">Tools</span></dt><dd>—</dd></div></dl>
-<a class="pv-bh mono" href="https://www.behance.net/murilozennaro" target="_blank" rel="noopener noreferrer"><span><span data-l="pt">Ver no Behance</span><span data-l="en">View on Behance</span></span><span>↗</span></a>
-</div></div>
-<div class="pv-g"></div>
-</div>
+<div class="gx pv-top mono"><button type="button" data-pv="close">← <span data-l="pt">Voltar</span><span data-l="en">Back</span></button><span class="pv-ct"><span class="pv-n">01</span> / <span class="pv-tot mu">01</span></span></div>
+<div class="gx pv-bd"></div>
 <div class="gx pv-nav"><button type="button" data-pv="prev"><span class="mono mu">← <span data-l="pt">Anterior</span><span data-l="en">Previous</span></span><b class="pv-pn"></b></button><button type="button" data-pv="next"><span class="mono mu"><span data-l="pt">Próximo</span><span data-l="en">Next</span> →</span><b class="pv-nn"></b></button></div>
 </div>
 
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3583}}'>
-class Component extends DCLogic {
-  componentDidMount() {
-    var self = this;
-    this._fit = function () {
-      var el = document.querySelector('.md'); if (!el) return;
-      var w = window.innerWidth, h = window.innerHeight;
-      /* no canvas a janela tem a altura da prancheta: limita para o hero não esticar */
-      el.style.setProperty('--vh', (h > w * 1.1 && w > 900) || h > 1300 ? '900px' : h + 'px');
-    };
-    this._fit(); window.addEventListener('resize', this._fit);
-    /* idioma PT / EN (lembra a escolha) */
-    var root = document.documentElement;
-    var setL = function (l) {
-      root.classList.toggle('en', l === 'en'); root.lang = l === 'en' ? 'en' : 'pt-BR';
-      try { localStorage.setItem('mz-lang', l); } catch (e) {}
-    };
-    var saved = null; try { saved = localStorage.getItem('mz-lang'); } catch (e) {}
-    setL(saved || 'pt');
-    /* detalhe do projeto */
-    var pj = this.renderVals().pj, cur = 0;
-    var q = function (c) { return document.querySelector(c); };
-    var esc = function (t) { return String(t).replace(/[&<>"]/g, function (m) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]; }); };
-    var LL = function (pt, en) { return '<span data-l="pt">' + esc(pt) + '</span><span data-l="en">' + esc(en) + '</span>'; };
-    var show = function (i) {
-      var pv = q('.pv'); if (!pv) return;
-      cur = (i + pj.length) % pj.length; var p = pj[cur];
-      q('.pv-n').textContent = p.n; q('.pv-tot').textContent = (pj.length < 10 ? '0' : '') + pj.length;
-      q('.pv-t').textContent = p.t; q('.pv-c').innerHTML = LL(p.c, p.ce); q('.pv-c2').innerHTML = LL(p.c, p.ce);
-      var g = '', im = p.g;
-      for (var j = 0; j < Math.max(3, im.length); j++) {
-        g += im[j] ? '<figure><img src="' + im[j] + '" alt="' + esc(p.t) + ' — ' + (j + 1) + '"></figure>'
-          : '<figure class="pv-ph mono">' + LL('Imagem 0' + (j + 1), 'Image 0' + (j + 1)) + '</figure>';
-      }
-      q('.pv-g').innerHTML = g;
-      Array.prototype.forEach.call(pv.querySelectorAll('.pv-g img'), function (m) {
-        var done = function () { m.classList.add('ld'); };
-        if (m.complete) setTimeout(done, 30); else m.addEventListener('load', done);
-      });
-      q('.pv-pn').textContent = pj[(cur - 1 + pj.length) % pj.length].t;
-      q('.pv-nn').textContent = pj[(cur + 1) % pj.length].t;
-      clearTimeout(self._out); pv.classList.remove('out');
-      var bd = q('.pv-bd'); bd.classList.remove('go'); void bd.offsetWidth; bd.classList.add('go');
-      pv.scrollTop = 0; pv.classList.add('on'); pv.setAttribute('aria-hidden', 'false');
-      root.style.overflow = 'hidden';
-    };
-    var hide = function () {
-      var pv = q('.pv'); if (!pv || !pv.classList.contains('on')) return;
-      pv.classList.add('out'); pv.setAttribute('aria-hidden', 'true');
-      self._out = setTimeout(function () { pv.classList.remove('on', 'out'); q('.pv-bd').classList.remove('go'); root.style.overflow = ''; }, 820);
-    };
-    this._lg = function (e) {
-      var t = e.target.closest ? e.target : null; if (!t) return;
-      var b = t.closest('[data-set]'); if (b) { setL(b.getAttribute('data-set')); return; }
-      var it = t.closest('.it[data-i]'); if (it) { e.preventDefault(); show(+it.getAttribute('data-i')); return; }
-      var a = t.closest('[data-pv]'); if (a) { var k = a.getAttribute('data-pv'); if (k === 'close') hide(); else show(cur + (k === 'next' ? 1 : -1)); }
-    };
-    this._key = function (e) {
-      var pv = q('.pv'); if (!pv || !pv.classList.contains('on')) return;
-      if (e.key === 'Escape') hide(); else if (e.key === 'ArrowRight') show(cur + 1); else if (e.key === 'ArrowLeft') show(cur - 1);
-    };
-    document.addEventListener('keydown', this._key);
-    /* entrada das seções ao rolar */
-    var its = document.querySelectorAll('.gr .it');
-    Array.prototype.forEach.call(its, function (el, i) { el.style.setProperty('--d', (i % 4) * 0.09 + 's'); });
-    var rv = document.querySelectorAll('[data-rv]');
-    if ('IntersectionObserver' in window) {
-      this._io = new IntersectionObserver(function (es, o) {
-        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); o.unobserve(e.target); } });
-      }, { rootMargin: '0px 0px -6% 0px', threshold: 0.12 });
-      Array.prototype.forEach.call(rv, function (el) { self._io.observe(el); });
-    } else { Array.prototype.forEach.call(rv, function (el) { el.classList.add('in'); }); }
-    document.addEventListener('click', this._lg);
-    /* hero: troca as fotos a cada 10s */
-    var k = 0;
-    this._sl = setInterval(function () {
-      var im = document.querySelectorAll('.hs-im img'); if (im.length < 2) return;
-      im[k].classList.remove('on'); k = (k + 1) % im.length; im[k].classList.add('on');
-      var n = document.querySelector('.hs-n'); if (n) n.textContent = '0' + (k + 1);
-      var bar = document.querySelector('.hf .cn i'); if (bar) { bar.style.display = 'none'; void bar.offsetWidth; bar.style.display = ''; }
-    }, 10000);
-  }
-  componentWillUnmount() { window.removeEventListener('resize', this._fit); document.removeEventListener('click', this._lg); document.removeEventListener('keydown', this._key); if (this._io) this._io.disconnect(); clearTimeout(this._out); document.documentElement.style.overflow = ''; clearInterval(this._sl); }
-  renderVals() {
-    var B = '/_blob/';
-    /* trabalhos: [capa, título, categoria, (mais imagens do projeto)] */
-    var P = [
-      [B + 'c77b2ee5d761050ba0f9b6bd8867365a', 'Social Media Rebrand', 'Social media'],
-      [B + '72a1b63e940aaf82e7b3953439c301de', 'Sports Graphics', 'Sports graphics'],
-      [B + '4b7fb364654e9b0cd65c0ac4929bcaca', 'Corinthians', 'Pôster'],
-      [B + 'cf73f4e6ced37681e512e3ddfe4fa438', 'England — World Cup', 'Pôster'],
-      [B + '1bdd67eb5bcef54869146cdab4c097f3', 'Camisa 11', 'Pôster'],
-      [B + 'b7ca89462c76008cd11ae7c8f15168e3', 'Skepta — UK', 'Pôster'],
-      [B + 'aff1ad78a24ceb80e9d6b9f7277aa590', 'PSG', 'Pôster'],
-      [B + 'f179cbc33dcba370c2478d3147ae496e', 'SLAM — Cade Cunningham', 'Pôster'],
-      [B + 'd1ccc016682ff2063b6613bc951f1f24', 'France vs. Senegal', 'Pôster'],
-      [B + '7848819ade3caf57de9a53f750bb611f', 'Nocta × Corinthians', 'Pôster'],
-      [B + 'f7291f2b45947e975256a58c90afe856', 'Disco', 'Pôster'],
-      [B + 'f9b9927e9474868c9d4d96fe8dbd653f', 'Matchday', 'Sports graphics']
-    ];
-    return {
-      year: String(new Date().getFullYear()),
-      total: (P.length < 10 ? '0' : '') + P.length,
-      pj: P.map(function (x, i) { return { i: i, src: x[0], t: x[1], c: x[2], ce: x[2] === 'Pôster' ? 'Poster' : x[2], g: [x[0]].concat(x[3] || []), n: (i < 9 ? '0' : '') + (i + 1) }; })
-    };
-  }
-}
-</script>
+<script type="application/json" id="mz-data">{"projetos": [{"publicado": true, "titulo": "Social Media Rebrand", "titulo_en": "", "categoria": "Social media", "categoria_en": "", "capa": "img/projetos/01-social-media-rebrand.jpg", "imagens": [], "galeria": "Duas colunas", "mostrar_capa_na_galeria": true, "descricao": "", "descricao_en": "", "informacoes": [], "links": []}, {"publicado": true, "titulo": "Sports Graphics", "titulo_en": "", "categoria": "Sports graphics", "categoria_en": "", "capa": "img/projetos/02-sports-graphics.jpg", "imagens": [], "galeria": "Duas colunas", "mostrar_capa_na_galeria": true, "descricao": "", "descricao_en": "", "informacoes": [], "links": []}, {"publicado": true, "titulo": "Corinthians", "titulo_en": "", "categoria": "Pôster", "categoria_en": "Poster", "capa": "img/projetos/03-corinthians.jpg", "imagens": [], "galeria": "Duas colunas", "mostrar_capa_na_galeria": true, "descricao": "", "descricao_en": "", "informacoes": [], "links": []}, {"publicado": true, "titulo": "England — World Cup", "titulo_en": "", "categoria": "Pôster", "categoria_en": "Poster", "capa": "img/projetos/04-england-world-cup.jpg", "imagens": [], "galeria": "Duas colunas", "mostrar_capa_na_galeria": true, "descricao": "", "descricao_en": "", "informacoes": [], "links": []}, {"publicado": true, "titulo": "Camisa 11", "titulo_en": "", "categoria": "Pôster", "categoria_en": "Poster", "capa": "img/projetos/05-camisa-11.jpg", "imagens": [], "galeria": "Duas colunas", "mostrar_capa_na_galeria": true, "descricao": "", "descricao_en": "", "informacoes": [], "links": []}, {"publicado": true, "titulo": "Skepta — UK", "titulo_en": "", "categoria": "Pôster", "categoria_en": "Poster", "capa": "img/projetos/06-skepta-uk.jpg", "imagens": [], "galeria": "Duas colunas", "mostrar_capa_na_galeria": true, "descricao": "", "descricao_en": "", "informacoes": [], "links": []}, {"publicado": true, "titulo": "PSG", "titulo_en": "", "categoria": "Pôster", "categoria_en": "Poster", "capa": "img/projetos/07-psg.jpg", "imagens": [], "galeria": "Duas colunas", "mostrar_capa_na_galeria": true, "descricao": "", "descricao_en": "", "informacoes": [], "links": []}, {"publicado": true, "titulo": "SLAM — Cade Cunningham", "titulo_en": "", "categoria": "Pôster", "categoria_en": "Poster", "capa": "img/projetos/08-slam-cade-cunningham.jpg", "imagens": [], "galeria": "Duas colunas", "mostrar_capa_na_galeria": true, "descricao": "", "descricao_en": "", "informacoes": [], "links": []}, {"publicado": true, "titulo": "France vs. Senegal", "titulo_en": "", "categoria": "Pôster", "categoria_en": "Poster", "capa": "img/projetos/09-france-vs-senegal.jpg", "imagens": [], "galeria": "Duas colunas", "mostrar_capa_na_galeria": true, "descricao": "", "descricao_en": "", "informacoes": [], "links": []}, {"publicado": true, "titulo": "Nocta × Corinthians", "titulo_en": "", "categoria": "Pôster", "categoria_en": "Poster", "capa": "img/projetos/10-nocta-x-corinthians.jpg", "imagens": [], "galeria": "Duas colunas", "mostrar_capa_na_galeria": true, "descricao": "", "descricao_en": "", "informacoes": [], "links": []}, {"publicado": true, "titulo": "Disco", "titulo_en": "", "categoria": "Pôster", "categoria_en": "Poster", "capa": "img/projetos/11-disco.jpg", "imagens": [], "galeria": "Duas colunas", "mostrar_capa_na_galeria": true, "descricao": "", "descricao_en": "", "informacoes": [], "links": []}, {"publicado": true, "titulo": "Matchday", "titulo_en": "", "categoria": "Sports graphics", "categoria_en": "", "capa": "img/projetos/12-matchday.jpg", "imagens": [], "galeria": "Duas colunas", "mostrar_capa_na_galeria": true, "descricao": "", "descricao_en": "", "informacoes": [], "links": []}]}</script>
+<script src="js/main.js"></script>
 </body>
 </html>
