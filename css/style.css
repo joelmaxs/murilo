@@ -158,8 +158,10 @@ html:not(.en) .md .lg [data-set="pt"],html.en .md .lg [data-set="en"]{color:var(
 .md .ct .so a span{transition:transform .6s var(--eo)}
 .md .ct .so a:hover span{transform:translate(3px,-3px)}
 .md .ct .so a:hover{color:var(--blue);padding-left:8px}
-.md .mail{display:block;font-weight:400;font-size:calc((100vw - var(--g) * 2 - var(--pad) * 2) / 11.2);line-height:.95;letter-spacing:-.055em;white-space:nowrap;transition:color .5s var(--eo),letter-spacing .9s var(--eo);padding-block:clamp(60px,9vw,140px) var(--pad)!important}
-.md .mail:hover{color:var(--blue);letter-spacing:-.045em}
+.md .mail{display:block;font-weight:400;font-size:calc((100vw - var(--g) * 2 - var(--pad) * 2) / 11.2);line-height:.95;letter-spacing:-.055em;white-space:nowrap;transition:color .5s var(--eo);padding-block:clamp(60px,9vw,140px) var(--pad)!important}
+.md .mail:hover{color:var(--blue)}
+.md .toast{position:fixed;left:50%;bottom:clamp(16px,3vw,32px);z-index:80;display:flex;align-items:center;gap:10px;padding:13px 18px;background:var(--blue);color:#fff;font-family:'Geist Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;pointer-events:none;opacity:0;filter:blur(8px);transform:translate(-50%,18px);transition:opacity .45s var(--eo),filter .45s var(--eo),transform .7s var(--eo)}
+.md .toast.on{opacity:1;filter:none;transform:translate(-50%,0)}
 .md .ft{grid-template-columns:1fr 1fr;border-top:0}
 .md .ft>*:last-child{text-align:right}
 .md .ft a{color:var(--fg)}

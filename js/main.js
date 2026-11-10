@@ -106,8 +106,23 @@
     outT = setTimeout(function () { pv.classList.remove('on', 'out'); bd.classList.remove('go'); root.style.overflow = '';
       var b = grid && grid.querySelector('[data-i="' + cur + '"]'); if (b) b.focus({ preventScroll: true }); }, 820);
   }
+  /* clicar no e-mail copia o endereço */
+  var toastT = 0;
+  var copyMail = function (a) {
+    var addr = (a.getAttribute('href') || '').replace(/^mailto:/, '');
+    var ok = function () {
+      var md = document.querySelector('.md'), t = document.querySelector('.md .toast');
+      if (!t) { t = document.createElement('p'); t.className = 'toast'; t.setAttribute('role', 'status'); md.appendChild(t); }
+      t.innerHTML = '✓ <span data-l="pt">E-mail copiado</span><span data-l="en">Email copied</span>';
+      t.classList.remove('on'); void t.offsetWidth; t.classList.add('on');
+      clearTimeout(toastT); toastT = setTimeout(function () { t.classList.remove('on'); }, 2200);
+    };
+    var fb = function () { window.location.href = 'mailto:' + addr; };
+    try { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(addr).then(ok, fb); else fb(); } catch (err) { fb(); }
+  };
   document.addEventListener('click', function (e) {
     var t = e.target; if (!t.closest) return;
+    var m = t.closest('a.mail'); if (m) { e.preventDefault(); copyMail(m); return; }
     var b = t.closest('[data-set]'); if (b) { setL(b.getAttribute('data-set')); return; }
     var it = t.closest('.it[data-i]'); if (it) { e.preventDefault(); show(+it.getAttribute('data-i')); return; }
     var a = t.closest('[data-pv]'); if (a) { var x = a.getAttribute('data-pv'); if (x === 'close') hide(); else show(cur + (x === 'next' ? 1 : -1)); }
