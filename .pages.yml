@@ -6,96 +6,96 @@ media:
 
 content:
   - name: projetos
-    label: Projetos
-    description: A ordem da lista é a ordem do site. Arraste para reorganizar.
+    label: "Projetos"
+    description: "A ordem da lista é a ordem do site. Arraste para reorganizar."
     type: file
     path: data/projetos.json
     format: json
     fields:
       - name: projetos
-        label: Projetos
+        label: "Projetos"
         type: object
         list: true
         fields:
           - name: publicado
-            label: Mostrar no site
-            description: Desmarque para esconder o projeto sem apagar.
+            label: "Mostrar no site"
+            description: "Desmarque para esconder o projeto sem apagar."
             type: boolean
-            default: true
+            default: "true"
           - name: titulo
-            label: Nome do projeto
+            label: "Nome do projeto"
             type: string
             required: true
           - name: titulo_en
-            label: Nome em inglês (opcional)
-            description: Se ficar vazio, usa o nome em português.
+            label: "Nome em inglês (opcional)"
+            description: "Se ficar vazio, usa o nome em português."
             type: string
           - name: categoria
-            label: Categoria
-            description: Ex.: Pôster, Social media, Sports graphics, Key visual…
+            label: "Categoria"
+            description: "Ex.: Pôster, Social media, Sports graphics, Key visual…"
             type: string
           - name: categoria_en
-            label: Categoria em inglês (opcional)
+            label: "Categoria em inglês (opcional)"
             type: string
           - name: capa
-            label: Capa
-            description: Imagem que aparece na grade de trabalhos.
+            label: "Capa"
+            description: "Imagem que aparece na grade de trabalhos."
             type: image
             required: true
           - name: imagens
-            label: Imagens do projeto
-            description: Quantas quiser (ou nenhuma). Arraste para mudar a ordem.
+            label: "Imagens do projeto"
+            description: "Quantas quiser (ou nenhuma). Arraste para mudar a ordem."
             type: image
             options:
               multiple: true
           - name: galeria
-            label: Layout das imagens
+            label: "Layout das imagens"
             type: select
-            default: Duas colunas
+            default: "Duas colunas"
             options:
               values: [Duas colunas, Uma por linha]
           - name: mostrar_capa_na_galeria
-            label: Repetir a capa como primeira imagem do projeto
+            label: "Repetir a capa como primeira imagem do projeto"
             type: boolean
-            default: true
+            default: "true"
           - name: descricao
-            label: Descrição (opcional)
-            description: Pule uma linha para criar um novo parágrafo.
+            label: "Descrição (opcional)"
+            description: "Pule uma linha para criar um novo parágrafo."
             type: text
           - name: descricao_en
-            label: Descrição em inglês (opcional)
+            label: "Descrição em inglês (opcional)"
             type: text
           - name: informacoes
-            label: Informações (opcional)
-            description: Adicione só as que quiser — ex.: Cliente, Ano, Ferramentas, Função.
+            label: "Informações (opcional)"
+            description: "Adicione só as que quiser — ex.: Cliente, Ano, Ferramentas, Função."
             type: object
             list: true
             fields:
               - name: rotulo
-                label: Rótulo
+                label: "Rótulo"
                 type: string
               - name: rotulo_en
-                label: Rótulo em inglês (opcional)
+                label: "Rótulo em inglês (opcional)"
                 type: string
               - name: valor
-                label: Valor
+                label: "Valor"
                 type: string
               - name: valor_en
-                label: Valor em inglês (opcional)
+                label: "Valor em inglês (opcional)"
                 type: string
           - name: links
-            label: Links (opcional)
-            description: Behance, Instagram, site do cliente… Se o projeto não tiver link, deixe vazio.
+            label: "Links (opcional)"
+            description: "Behance, Instagram, site do cliente… Se o projeto não tiver link, deixe vazio."
             type: object
             list: true
             fields:
               - name: url
-                label: Endereço (URL)
+                label: "Endereço (URL)"
                 type: string
               - name: texto
-                label: Texto do botão (opcional)
-                description: Se ficar vazio, aparece "Ver projeto".
+                label: "Texto do botão (opcional)"
+                description: "Se ficar vazio, aparece \"Ver projeto\"."
                 type: string
               - name: texto_en
-                label: Texto do botão em inglês (opcional)
+                label: "Texto do botão em inglês (opcional)"
                 type: string
